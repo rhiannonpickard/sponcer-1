@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>APIC Event</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+ --primary:#1f2f3a;
+ --secondary:#2e4a5a;
+ --accent:#4fa3d1;
+ --light-bg:#f5f7f9;
+ --white:#ffffff;
+ --text-dark:#2b2b2b;
+ --text-muted:#6b7280;
+ --border:#e5e7eb;
+}
+
+/* GLOBAL RESET */
+*{
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+}
+
+body{
+ font-family:'Inter','Helvetica Neue',Arial,sans-serif;
+ color:var(--text-dark);
+ background:#fff;
+ line-height:1.5;
+ -webkit-font-smoothing:antialiased;
+}
+
+/* NAVBAR (tight like APIC) */
+.navbar{
+ background:#fff;
+ border-bottom:1px solid var(--border);
+ position:sticky;
+ top:0;
+ z-index:1000;
+}
+
+.nav-inner{
+ max-width:1200px;
+ margin:auto;
+ padding:16px 24px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+
+.logo{
+ font-weight:600;
+ font-size:17px;
+ color:var(--primary);
+ letter-spacing:.2px;
+}
+
+.nav-links a{
+ margin-left:28px;
+ text-decoration:none;
+ color:var(--text-dark);
+ font-size:14px;
+ font-weight:500;
+}
+
+.nav-links a:hover{
+ color:var(--accent);
+}
+
+/* LAYOUT */
+.container{
+ max-width:1100px; /* tighter like APIC */
+ margin:auto;
+ padding:0 24px;
+}
+
+.section{
+ padding:110px 0;
+}
+
+.section-light{
+ background:var(--light-bg);
+}
+
+/* HERO (very specific spacing) */
+.hero{
+ padding:140px 0 100px;
+}
+
+.hero h1{
+ font-size:46px;
+ font-weight:700;
+ letter-spacing:-0.02em;
+ color:var(--primary);
+ max-width:640px;
+ margin-bottom:18px;
+}
+
+.hero p{
+ font-size:16px;
+ color:var(--text-muted);
+ max-width:520px;
+ line-height:1.7;
+ margin-bottom:34px;
+}
+
+/* BUTTONS */
+.btn{
+ display:inline-block;
+ padding:14px 28px;
+ border-radius:4px;
+ font-weight:600;
+ font-size:14px;
+ text-decoration:none;
+ cursor:pointer;
+ transition:all .2s ease;
+}
+
+.btn-primary{
+ background:var(--accent);
+ color:#fff;
+ box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.btn-primary:hover{
+ background:#3b8bb5;
+ transform:translateY(-2px);
+ box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* GRID */
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:28px;
+ margin-top:60px;
+}
+
+/* CARDS (THIS IS WHERE APIC FEEL COMES FROM) */
+.card{
+ background:#fff;
+ border:1px solid var(--border);
+ padding:30px;
+ border-radius:6px;
+ transition:all .25s ease;
+}
+
+.card:hover{
+ transform:translateY(-6px);
+ box-shadow:0 12px 32px rgba(0,0,0,0.08);
+ border-color:#dcdfe3;
+}
+
+.card h3{
+ margin-bottom:12px;
+ color:var(--primary);
+ font-size:18px;
+}
+
+.card ul{
+ list-style:none;
+ margin:16px 0 26px;
+}
+
+.card li{
+ color:var(--text-muted);
+ margin-bottom:8px;
+ font-size:14.5px;
+}
+
+/* FEATURED CARD (subtle emphasis, not loud) */
+.featured{
+ border-top:3px solid var(--accent);
+ transform:translateY(-4px);
+}
+
+.badge{
+ font-size:11px;
+ font-weight:600;
+ color:var(--accent);
+ margin-bottom:8px;
+ letter-spacing:.5px;
+}
+
+/* LOGO STRIP (very subtle like APIC) */
+.logos{
+ text-align:center;
+ margin-top:70px;
+ padding-top:30px;
+ border-top:1px solid var(--border);
+}
+
+.logos p{
+ font-size:13px;
+ color:var(--text-muted);
+ margin-bottom:18px;
+}
+
+.logo-row{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:36px;
+}
+
+.logo-row img{
+ height:32px;
+ opacity:.55;
+ transition:.2s;
+}
+
+.logo-row img:hover{
+ opacity:.9;
+}
+
+/* DROPDOWN */
+.dropdown{
+ text-align:center;
+ margin-top:70px;
+}
+
+select{
+ padding:12px;
+ border-radius:4px;
+ border:1px solid var(--border);
+ font-size:14px;
+ margin-right:10px;
+}
+
+button{
+ border:none;
+}
+
+/* MICRO INTERACTIONS */
+a, button, select{
+ transition:all .2s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="navbar">
+  <div class="nav-inner">
+    <div class="logo">APIC Solutions</div>
+    <div class="nav-links">
+      <a href="#">Services</a>
+      <a href="#">Industries</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="section">
+  <div class="container hero">
+    <h1>Power the Future. Secure Your Spot.</h1>
+    <p>
+      Join leaders in electrical, security, and infrastructure. 
+      Build partnerships that scale through fully integrated systems and proven performance.
+    </p>
+    <a href="#" class="btn btn-primary">Register Now</a>
+  </div>
+</div>
+
+<!-- SPONSOR SECTION -->
+<div class="section section-light">
+  <div class="container">
+
+    <div class="grid">
+
+      <div class="card featured">
+        <div class="badge">MOST POPULAR</div>
+        <h3>Platinum Sponsor</h3>
+        <ul>
+          <li>Premium logo placement</li>
+          <li>Speaking opportunity</li>
+          <li>Maximum exposure</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Become Platinum</a>
+      </div>
+
+      <div class="card">
+        <h3>Gold Sponsor</h3>
+        <ul>
+          <li>High visibility branding</li>
+          <li>Event recognition</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Become Gold</a>
+      </div>
+
+      <div class="card">
+        <h3>Silver Sponsor</h3>
+        <ul>
+          <li>Logo placement</li>
+          <li>Brand exposure</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Become Silver</a>
+      </div>
+
+      <div class="card">
+        <h3>Bronze Sponsor</h3>
+        <ul>
+          <li>Event listing</li>
+          <li>Entry-level exposure</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Become Bronze</a>
+      </div>
+
+    </div>
+
+    <!-- TRUST STRIP -->
+    <div class="logos">
+      <p>Trusted by Industry Leaders</p>
+      <div class="logo-row">
+        <img src="https://via.placeholder.com/120x40?text=Logo">
+        <img src="https://via.placeholder.com/120x40?text=Logo">
+        <img src="https://via.placeholder.com/120x40?text=Logo">
+        <img src="https://via.placeholder.com/120x40?text=Logo">
+      </div>
+    </div>
+
+    <!-- DROPDOWN -->
+    <div class="dropdown">
+      <select id="select">
+        <option value="">Select Participation Type</option>
+        <option value="attendee">Attendee</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+      <button onclick="goToPayment()" class="btn btn-primary">Continue</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function goToPayment(){
+  const links = {
+    attendee:"#",
+    platinum:"#",
+    gold:"#",
+    silver:"#",
+    bronze:"#"
+  };
+
+  const val = document.getElementById("select").value;
+  if(links[val]) window.location.href = links[val];
+}
+</script>
+
+</body>
+</html>
+
+
